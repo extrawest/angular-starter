@@ -33,4 +33,9 @@ package.json
 package-lock.json
 tsconfig.json
 
-src/index.html
+.eslintrc.json
+angular.json
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+/src/index.html
