@@ -1,8 +1,7 @@
-<p-sidebar [(visible)]="display"> Content </p-sidebar>
+<ul>
+  <li><a [routerLink]="'/login'">login</a></li>
+  <li><a [routerLink]="'/register'">register</a></li>
+  <li><a [routerLink]="'/dashboard'">dashboard</a></li>
+</ul>
 
-<p-button
-  type="text"
-  (click)="display = true"
-  icon="pi pi-plus"
-  label="Show"
-></p-button>
+<router-outlet></router-outlet>
