@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "configure-husky": "rimraf .husky && npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
-    "config": "node firstConfig.js"
+    "first-config": "node firstConfig.js"
   },
   "private": true,
   "husky": {
