@@ -39,3 +39,4 @@ tsconfig.app.json
 tsconfig.json
 tsconfig.spec.json
 /src/index.html
+firstConfig.js

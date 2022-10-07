@@ -1,6 +1,7 @@
 {
   "name": "angular-app-starter",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "configure-husky": "rimraf .husky && npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+    "configure-husky": "rimraf .husky && npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
+    "config": "node firstConfig.js"
   },
   "private": true,
   "husky": {
