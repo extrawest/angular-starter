@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private translate: TranslateService) {}
 
   ngOnInit(): void {
     console.log('HeaderComponent');
@@ -15,5 +16,10 @@ export class HeaderComponent implements OnInit {
 
   goToHomePage(): void {
     this.router.navigate(['/dashboard']);
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
+    localStorage.setItem('currentLanguage', language);
   }
 }
