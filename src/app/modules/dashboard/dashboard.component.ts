@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  testEvnVar: string = process.env.NG_APP_TEST_VAR;
+
   constructor() {}
 
   ngOnInit(): void {
