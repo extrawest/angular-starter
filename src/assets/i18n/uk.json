@@ -1,5 +1,10 @@
 {
   "test": {
-    "testText": "Це тестовий текст для перевірки пакета @ngx-translate."
+    "testText": "Це тестовий текст для перевірки пакета @ngx-translate.",
+    "settings": {
+      "personalSettings": "Персональні налаштування",
+      "profile": "Профіль",
+      "myAccount": "Мій пахунок"
+    }
   }
 }

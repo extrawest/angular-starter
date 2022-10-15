@@ -1,5 +1,10 @@
 {
   "test": {
-    "testText": "This is dummy text for @ngx-translate package test."
+    "testText": "This is dummy text for @ngx-translate package test.",
+    "settings": {
+      "personalSettings": "Personal Settings",
+      "profile": "Profile",
+      "myAccount": "My account"
+    }
   }
 }

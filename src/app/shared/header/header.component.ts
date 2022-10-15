@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,57 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  items!: MenuItem[];
+
   constructor(private router: Router, private translate: TranslateService) {}
 
   ngOnInit(): void {
-    console.log('HeaderComponent');
+    this.items = [
+      {
+        label: this.translate.instant('test.settings.personalSettings'),
+        items: [
+          {
+            label: this.translate.instant('test.settings.profile'),
+            icon: 'c-icons second-icon',
+            command: (): void => {
+              console.log('This is Profile settings button');
+            },
+          },
+          {
+            label: this.translate.instant('test.settings.myAccount'),
+            icon: 'c-icons first-icon',
+            command: (): void => {
+              console.log('This is My account settings button');
+            },
+          },
+        ],
+      },
+    ];
+
+    // TODO: implement unsubscribe
+    this.translate.onLangChange.pipe().subscribe(() => {
+      this.items = [
+        {
+          label: this.translate.instant('test.settings.personalSettings'),
+          items: [
+            {
+              label: this.translate.instant('test.settings.profile'),
+              icon: 'c-icons second-icon',
+              command: (): void => {
+                console.log('This is Profile settings button');
+              },
+            },
+            {
+              label: this.translate.instant('test.settings.myAccount'),
+              icon: 'c-icons first-icon',
+              command: (): void => {
+                console.log('This is My account settings button');
+              },
+            },
+          ],
+        },
+      ];
+    });
   }
 
   goToHomePage(): void {
