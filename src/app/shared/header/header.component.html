@@ -1,7 +1,11 @@
 <header>
   <p-toolbar styleClass="bg-primary header border-none border-noround">
     <div class="p-toolbar-group-left">
-      <p-button icon="pi pi-bars" styleClass="mr-4"></p-button>
+      <p-button
+        icon="pi pi-bars"
+        styleClass="mr-4"
+        (onClick)="openSideBar()"
+      ></p-button>
       <p-button
         label="Home"
         icon="pi pi-home"
@@ -26,3 +30,5 @@
 </header>
 
 <p-menu #userSettings [popup]="true" [model]="items"></p-menu>
+
+<p-sidebar [(visible)]="display"> Content </p-sidebar>

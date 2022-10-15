@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
+import { SidebarModule } from 'primeng/sidebar';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -16,6 +17,7 @@ import { LayoutComponent } from './layout/layout.component';
     ToolbarModule,
     ButtonModule,
     MenuModule,
+    SidebarModule,
   ],
 })
 export class SharedModule {}

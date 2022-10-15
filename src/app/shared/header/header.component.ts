@@ -10,6 +10,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
+  display: boolean = false;
 
   constructor(private router: Router, private translate: TranslateService) {}
 
@@ -64,6 +65,10 @@ export class HeaderComponent implements OnInit {
 
   goToHomePage(): void {
     this.router.navigate(['/dashboard']);
+  }
+
+  openSideBar(): void {
+    this.display = true;
   }
 
   useLanguage(language: string): void {
