@@ -15,16 +15,40 @@
       <p-button icon="pi pi-search" styleClass="p-button-warning"></p-button>
     </div>
 
-    <button (click)="useLanguage('en')">en</button>
-    <button (click)="useLanguage('uk')">uk</button>
-
     <div class="p-toolbar-group-right">
       <p-button icon="pi pi-envelope" styleClass="mr-4"></p-button>
+
       <p-button icon="pi pi-bell" styleClass="mr-4"></p-button>
+
       <p-button
         (click)="userSettings.toggle($event)"
         icon="pi pi-user"
+        styleClass="mr-4"
       ></p-button>
+
+      <p-dropdown
+        (onChange)="changeLanguage($event)"
+        styleClass="shell-dropdown "
+        [options]="languages"
+        [(ngModel)]="currentLanguage"
+      >
+        <ng-template pTemplate="selectedItem" let-selectedItem>
+          <img
+            class="flag mr-2 hidden md:inline w-1rem"
+            [src]="'assets/icons/' + selectedItem.code + '.svg'"
+            alt="flag"
+          />
+          {{ selectedItem.name | uppercase }}
+        </ng-template>
+        <ng-template pTemplate="item" let-item>
+          <img
+            class="flag mr-2 hidden md:inline w-1rem"
+            [src]="'assets/icons/' + item.code + '.svg'"
+            alt="flag"
+          />
+          <span style="color: inherit">{{ item.name }}</span>
+        </ng-template>
+      </p-dropdown>
     </div>
   </p-toolbar>
 </header>

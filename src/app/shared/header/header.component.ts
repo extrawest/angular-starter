@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 
+interface Language {
+  name: string;
+  code: string;
+}
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,6 +16,22 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
   display: boolean = false;
+
+  // TODO: create translation service
+  languages: Language[] = [
+    {
+      code: 'uk',
+      name: 'UK',
+    },
+    {
+      code: 'en',
+      name: 'EN',
+    },
+  ];
+  currentLanguage: Language = {
+    code: 'uk',
+    name: 'UK',
+  };
 
   constructor(private router: Router, private translate: TranslateService) {}
 
@@ -71,8 +92,11 @@ export class HeaderComponent implements OnInit {
     this.display = true;
   }
 
-  useLanguage(language: string): void {
-    this.translate.use(language);
-    localStorage.setItem('currentLanguage', language);
+  changeLanguage($event: {
+    originalEvent: PointerEvent;
+    value: Language;
+  }): void {
+    this.translate.use($event.value.code);
+    localStorage.setItem('currentLanguage', $event.value.code);
   }
 }
