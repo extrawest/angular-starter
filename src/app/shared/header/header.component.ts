@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 
@@ -8,6 +10,7 @@ interface Language {
   code: string;
 }
 
+@UntilDestroy()
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -58,8 +61,7 @@ export class HeaderComponent implements OnInit {
       },
     ];
 
-    // TODO: implement unsubscribe
-    this.translate.onLangChange.pipe().subscribe(() => {
+    this.translate.onLangChange.pipe(untilDestroyed(this)).subscribe(() => {
       this.items = [
         {
           label: this.translate.instant('test.settings.personalSettings'),
