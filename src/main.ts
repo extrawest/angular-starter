@@ -6,6 +6,10 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+
+  // Disable logs and warnings in production mode
+  console.log = (): void => {};
+  console.warn = (): void => {};
 }
 
 platformBrowserDynamic()
