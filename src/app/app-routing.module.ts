@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('./modules/dashboard/dashboard.module').then(
+          import('./feature/dashboard/dashboard.module').then(
             (m) => m.DashboardModule,
           ),
       },
@@ -20,13 +20,13 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./modules/login/login.module').then((m) => m.LoginModule),
+      import('./feature/login/login.module').then((m) => m.LoginModule),
   },
 
   {
     path: 'register',
     loadChildren: () =>
-      import('./modules/register/register.module').then(
+      import('./feature/register/register.module').then(
         (m) => m.RegisterModule,
       ),
   },
