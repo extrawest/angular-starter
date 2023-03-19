@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { mockResolverResolver } from './core/resolvers/mock-resolver.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,6 +14,9 @@ const routes: Routes = [
       {
         path: 'dashboard',
         canActivate: [AuthGuard],
+        resolve: {
+          example: mockResolverResolver,
+        },
         loadChildren: () =>
           import('./feature/dashboard/dashboard.module').then(
             (m) => m.DashboardModule,

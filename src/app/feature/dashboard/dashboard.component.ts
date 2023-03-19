@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,10 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class DashboardComponent implements OnInit {
   testEvnVar: string = environment.testEvnVar;
+  testResolverVar: unknown = null;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    console.log('DashboardComponent');
+    this.testResolverVar = this.route.snapshot.data['example'];
   }
 }
