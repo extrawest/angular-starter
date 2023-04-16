@@ -19,11 +19,20 @@ interface Language {
 
 @UntilDestroy()
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
-    standalone: true,
-    imports: [ToolbarModule, ButtonModule, DropdownModule, FormsModule, SharedModule, MenuModule, SidebarModule, UpperCasePipe]
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
+  standalone: true,
+  imports: [
+    ToolbarModule,
+    ButtonModule,
+    DropdownModule,
+    FormsModule,
+    SharedModule,
+    MenuModule,
+    SidebarModule,
+    UpperCasePipe,
+  ],
 })
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
