@@ -11,7 +11,7 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -24,16 +24,15 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+        },
     }),
     AppRoutingModule,
-    BrowserAnimationsModule,
-    SharedModule,
-  ],
+    BrowserAnimationsModule
+],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

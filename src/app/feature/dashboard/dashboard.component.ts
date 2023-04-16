@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss'],
+    standalone: true,
+    imports: [JsonPipe]
 })
 export class DashboardComponent implements OnInit {
   testEvnVar: string = environment.testEvnVar;

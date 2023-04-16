@@ -3,7 +3,14 @@ import { Router } from '@angular/router';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TranslateService } from '@ngx-translate/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, SharedModule } from 'primeng/api';
+import { UpperCasePipe } from '@angular/common';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenuModule } from 'primeng/menu';
+import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
+import { ToolbarModule } from 'primeng/toolbar';
 
 interface Language {
   name: string;
@@ -12,9 +19,11 @@ interface Language {
 
 @UntilDestroy()
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: true,
+    imports: [ToolbarModule, ButtonModule, DropdownModule, FormsModule, SharedModule, MenuModule, SidebarModule, UpperCasePipe]
 })
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
