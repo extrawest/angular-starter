@@ -12,10 +12,8 @@ import {
   provideHttpClient,
   HttpClient,
 } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './app/shared/layout/layout.component';
-import { AuthGuard } from './app/core/guards/auth.guard';
-import { mockResolverResolver } from './app/core/resolvers/mock-resolver.resolver';
+import { provideRouter } from '@angular/router';
+import { appRoutes } from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
@@ -29,42 +27,6 @@ function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
-const mainRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'dashboard',
-        canActivate: [AuthGuard],
-        resolve: {
-          example: mockResolverResolver,
-        },
-        loadChildren: () =>
-          import('./app/feature/dashboard/dashboard.module').then(
-            (m) => m.DashboardModule,
-          ),
-      },
-    ],
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./app/feature/login/login.module').then((m) => m.LoginModule),
-  },
-
-  {
-    path: 'register',
-    loadChildren: () =>
-      import('./app/feature/register/register.module').then(
-        (m) => m.RegisterModule,
-      ),
-  },
-
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
-];
-
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
@@ -76,8 +38,8 @@ bootstrapApplication(AppComponent, {
           deps: [HttpClient],
         },
       }),
-      RouterModule.forRoot(mainRoutes),
     ),
+    provideRouter(appRoutes),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
