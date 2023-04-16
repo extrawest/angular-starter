@@ -31,8 +31,8 @@ export const appRoutes: Routes = [
   {
     path: 'register',
     loadChildren: () =>
-      import('./feature/register/register.module').then(
-        (m) => m.RegisterModule,
+      import('./feature/register/register.routes').then(
+        (m) => m.registerRoutes,
       ),
   },
 
