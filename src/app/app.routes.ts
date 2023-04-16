@@ -25,7 +25,7 @@ export const appRoutes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./feature/login/login.module').then((m) => m.LoginModule),
+      import('./feature/login/login.routes').then((m) => m.loginRoutes),
   },
 
   {
