@@ -16,8 +16,8 @@ export const appRoutes: Routes = [
           example: mockResolverResolver,
         },
         loadChildren: () =>
-          import('./feature/dashboard/dashboard.module').then(
-            (m) => m.DashboardModule,
+          import('./feature/dashboard/dashboard.routes').then(
+            (m) => m.dashboardRoutes,
           ),
       },
     ],
