@@ -24,10 +24,31 @@
   </li>
 </ul>
 
-<p>{{ 'test.testText' | translate }}</p>
-
-<ul>
-  <li><a [routerLink]="'/login'">login</a></li>
-  <li><a [routerLink]="'/register'">register</a></li>
-  <li><a [routerLink]="'/dashboard'">dashboard</a></li>
+<ul
+  class="flex flex-column list-none p-0 align-items-center justify-content-center"
+>
+  <li>
+    <a
+      pButton
+      class="block p-button-link p-0 mb-2"
+      [routerLink]="'/login'"
+      [label]="'test.links.login' | translate"
+    ></a>
+  </li>
+  <li>
+    <a
+      pButton
+      class="block p-button-link p-0 mb-2"
+      [routerLink]="'/register'"
+      [label]="'test.links.register' | translate"
+    ></a>
+  </li>
+  <li>
+    <a
+      pButton
+      class="block p-button-link p-0 mb-2"
+      [routerLink]="'/dashboard'"
+      [label]="'test.links.dashboard' | translate"
+    ></a>
+  </li>
 </ul>
