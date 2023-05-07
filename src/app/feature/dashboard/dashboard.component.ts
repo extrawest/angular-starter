@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { JsonPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss'],
-    standalone: true,
-    imports: [JsonPipe]
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
+  standalone: true,
+  imports: [JsonPipe],
 })
 export class DashboardComponent implements OnInit {
   testEvnVar: string = environment.testEvnVar;
@@ -18,5 +18,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.testResolverVar = this.route.snapshot.data['example'];
+
+    console.log('this is data from resolver: ', this.testResolverVar);
+    console.log(
+      'this is testEvnVar variable from .env file: ',
+      this.testEvnVar,
+    );
   }
 }
