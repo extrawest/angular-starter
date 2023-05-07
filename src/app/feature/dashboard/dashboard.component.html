@@ -7,8 +7,8 @@
 
   <li class="p-2">
     <p-button styleClass="p-button-warning" (click)="onTestWarn()"
-      >error notification test</p-button
-    >
+      >error notification test
+    </p-button>
   </li>
 
   <li class="p-2">
@@ -22,4 +22,12 @@
       >error notification test
     </p-button>
   </li>
+</ul>
+
+<p>{{ 'test.testText' | translate }}</p>
+
+<ul>
+  <li><a [routerLink]="'/login'">login</a></li>
+  <li><a [routerLink]="'/register'">register</a></li>
+  <li><a [routerLink]="'/dashboard'">dashboard</a></li>
 </ul>
