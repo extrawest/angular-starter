@@ -22,6 +22,9 @@
       "password": "Пароль",
       "termsAndConditions": "Я прочитав Умови",
       "submit": "Відправити"
+    },
+    "footer": {
+      "copyright": "© 2023 Copyright"
     }
   }
 }

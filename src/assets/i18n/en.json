@@ -22,6 +22,9 @@
       "password": "Password",
       "termsAndConditions": "I have read the Terms and Conditions",
       "submit": "Submit"
+    },
+    "footer": {
+      "copyright": "© 2023 Copyright"
     }
   }
 }
