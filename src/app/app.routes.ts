@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './shared/layout/layout.component';
-import { AuthGuard } from './core/guards/auth.guard';
+import { authGuardFn } from './core/guards/auth.guard';
 import { mockResolverResolver } from './core/resolvers/mock-resolver.resolver';
 
 export const appRoutes: Routes = [
@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
     children: [
       {
         path: 'dashboard',
-        canActivate: [AuthGuard],
+        canActivate: [authGuardFn],
         resolve: {
           example: mockResolverResolver,
         },
@@ -35,6 +35,5 @@ export const appRoutes: Routes = [
         (m) => m.registerRoutes,
       ),
   },
-
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
