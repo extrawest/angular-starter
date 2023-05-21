@@ -1,31 +1,29 @@
-import { Injectable } from '@angular/core';
 import {
   HttpRequest,
-  HttpHandler,
   HttpEvent,
-  HttpInterceptor,
+  HttpInterceptorFn,
+  HttpHandlerFn,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const MOCK_TOKEN = 'test';
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+export const authInterceptorFm: HttpInterceptorFn = (
+  req: HttpRequest<unknown>,
+  next: HttpHandlerFn,
+): Observable<HttpEvent<unknown>> => {
+  const authHeader = `Bearer ${MOCK_TOKEN}`;
 
-  intercept<T = unknown>(
-    request: HttpRequest<T>,
-    next: HttpHandler,
-  ): Observable<HttpEvent<T>> {
-    const authHeader = `Bearer ${MOCK_TOKEN}`;
-
-    return next.handle(
-      request.clone({
-        setHeaders: {
-          Authorization: authHeader,
-          Accept: 'application/json, text/plain, */*',
-        },
-      }),
-    );
+  if (!authHeader?.length) {
+    return next(req);
   }
-}
+
+  return next(
+    req.clone({
+      setHeaders: {
+        Authorization: authHeader,
+        Accept: 'application/json, text/plain, */*',
+      },
+    }),
+  );
+};

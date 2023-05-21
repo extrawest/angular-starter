@@ -5,12 +5,11 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { AuthInterceptor } from './app/core/interceptors/auth.interceptor';
+import { authInterceptorFm } from './app/core/interceptors/auth.interceptor';
 import {
-  HTTP_INTERCEPTORS,
-  withInterceptorsFromDi,
   provideHttpClient,
   HttpClient,
+  withInterceptors,
 } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app/app.routes';
@@ -40,12 +39,7 @@ bootstrapApplication(AppComponent, {
       }),
     ),
     provideRouter(appRoutes),
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(withInterceptors([authInterceptorFm])),
     provideAnimations(),
   ],
 }).catch((err) => console.error(err));
