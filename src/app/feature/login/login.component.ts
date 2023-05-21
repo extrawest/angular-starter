@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   isSaving: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -28,13 +29,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // TODO: use rxjs here
   onSubmit(): void {
+    // TODO: just a dummy implementation
     this.isSaving = true;
 
     setTimeout(() => {
       console.log(this.form.getRawValue());
       this.isSaving = false;
+
+      this.router.navigate(['dashboard']);
     }, 2_000);
   }
 }
