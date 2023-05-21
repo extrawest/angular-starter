@@ -8,13 +8,14 @@ import {
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [ReactiveFormsModule, PasswordModule, ButtonModule],
+  imports: [ReactiveFormsModule, PasswordModule, ButtonModule, TranslateModule],
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;

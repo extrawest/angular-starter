@@ -9,6 +9,11 @@
       "login": "Логін",
       "register": "Реєстрація",
       "dashboard": "Головна"
+    },
+    "loginPage": {
+      "login": "Імʼя",
+      "password": "Пароль",
+      "submit": "Відправити"
     }
   }
 }

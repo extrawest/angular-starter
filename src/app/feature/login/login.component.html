@@ -9,27 +9,31 @@
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="login" class="col-12 sm:col-3"> login </label>
+          <label for="login" class="col-12 sm:col-3" translate>
+            test.loginPage.login
+          </label>
           <input
             class="col-12 sm:col-9"
             pInputText
             type="text"
             id="login"
             formControlName="login"
-            formControlName="login"
+            [placeholder]="'test.loginPage.login' | translate"
           />
         </div>
 
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="password" class="col-12 sm:col-3"> password </label>
+          <label for="password" class="col-12 sm:col-3" translate>
+            test.loginPage.password
+          </label>
           <p-password
             class="col-12 sm:col-9 p-0"
             inputStyleClass="pr-6"
             inputId="password"
             formControlName="password"
-            placeholder="password"
+            [placeholder]="'test.loginPage.password' | translate"
             [feedback]="true"
             [showClear]="true"
             [toggleMask]="true"
@@ -44,7 +48,7 @@
             pButton
             pRipple
             class="w-auto mt-2 md:mt-0"
-            [label]="'Submit'"
+            [label]="'test.loginPage.submit' | translate"
             [icon]="isSaving ? 'pi pi-spinner pi-spin' : 'pi pi-save'"
             [disabled]="form.invalid || isSaving"
           ></button>

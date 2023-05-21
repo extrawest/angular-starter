@@ -9,6 +9,11 @@
       "login": "Login",
       "register": "Register",
       "dashboard": "Dashboard"
+    },
+    "loginPage": {
+      "login": "Login",
+      "password": "Password",
+      "submit": "Submit"
     }
   }
 }
