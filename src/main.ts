@@ -5,7 +5,6 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { authInterceptorFm } from './app/core/interceptors/auth.interceptor';
 import {
   provideHttpClient,
   HttpClient,
@@ -13,6 +12,8 @@ import {
 } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app/app.routes';
+import { errorInterceptorFn } from './app/core/interceptors/error.interceptor';
+import { authInterceptorFn } from './app/core/interceptors/auth.interceptor';
 
 if (environment.production) {
   enableProdMode();
@@ -39,7 +40,9 @@ bootstrapApplication(AppComponent, {
       }),
     ),
     provideRouter(appRoutes),
-    provideHttpClient(withInterceptors([authInterceptorFm])),
+    provideHttpClient(
+      withInterceptors([authInterceptorFn, errorInterceptorFn]),
+    ),
     provideAnimations(),
   ],
 }).catch((err) => console.error(err));

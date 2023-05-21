@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 const MOCK_TOKEN = 'test';
 
-export const authInterceptorFm: HttpInterceptorFn = (
+export const authInterceptorFn: HttpInterceptorFn = (
   req: HttpRequest<unknown>,
   next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
