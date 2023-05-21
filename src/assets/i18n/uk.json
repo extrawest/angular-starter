@@ -11,8 +11,16 @@
       "dashboard": "Головна"
     },
     "loginPage": {
-      "login": "Імʼя",
+      "login": "Пошта",
       "password": "Пароль",
+      "submit": "Відправити"
+    },
+    "registerPage": {
+      "firstName": "Імʼя",
+      "lastName": "Прізвище",
+      "email": "Пошта",
+      "password": "Пароль",
+      "termsAndConditions": "Я прочитав Умови",
       "submit": "Відправити"
     }
   }

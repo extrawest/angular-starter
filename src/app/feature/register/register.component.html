@@ -9,55 +9,63 @@
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="firstName" class="col-12 sm:col-3"> firstName </label>
+          <label for="firstName" class="col-12 sm:col-3" translate>
+            test.registerPage.firstName
+          </label>
           <input
             class="col-12 sm:col-9"
             pInputText
             type="text"
             id="firstName"
             formControlName="firstName"
-            placeholder="firstName"
+            [placeholder]="'test.registerPage.firstName' | translate"
           />
         </div>
 
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="lastName" class="col-12 sm:col-3"> lastName </label>
+          <label for="lastName" class="col-12 sm:col-3" translate>
+            test.registerPage.lastName
+          </label>
           <input
             class="col-12 sm:col-9"
             pInputText
             type="text"
             id="lastName"
             formControlName="lastName"
-            placeholder="lastName"
+            [placeholder]="'test.registerPage.lastName' | translate"
           />
         </div>
 
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="login" class="col-12 sm:col-3"> login </label>
+          <label for="login" class="col-12 sm:col-3" translate>
+            test.registerPage.email
+          </label>
           <input
             class="col-12 sm:col-9"
             pInputText
             type="text"
             id="login"
             formControlName="login"
-            placeholder="login"
+            [placeholder]="'test.registerPage.email' | translate"
           />
         </div>
 
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="password" class="col-12 sm:col-3"> password </label>
+          <label for="password" class="col-12 sm:col-3" translate>
+            test.registerPage.password
+          </label>
           <p-password
             class="col-12 sm:col-9 p-0"
             inputStyleClass="pr-6"
             inputId="password"
             formControlName="password"
-            placeholder="password"
+            [placeholder]="'test.registerPage.password' | translate"
             [feedback]="true"
             [showClear]="true"
             [toggleMask]="true"
@@ -67,8 +75,11 @@
         <div
           class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
         >
-          <label for="password" class="col-12 sm:col-10 p-0 flex align-items-center">
-            <span> I have read the Terms and Conditions </span>
+          <label
+            for="isTermsAndCondition"
+            class="col-12 sm:col-10 p-0 flex align-items-center"
+          >
+            <span translate> test.registerPage.termsAndConditions </span>
           </label>
 
           <div class="col-12 sm:col-2 p-0">
@@ -87,7 +98,7 @@
             pButton
             pRipple
             class="w-auto mt-2 md:mt-0"
-            [label]="'Submit'"
+            [label]="'test.registerPage.submit' | translate"
             [icon]="isSaving ? 'pi pi-spinner pi-spin' : 'pi pi-save'"
             [disabled]="form.invalid || isSaving"
           ></button>

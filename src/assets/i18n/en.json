@@ -14,6 +14,14 @@
       "login": "Login",
       "password": "Password",
       "submit": "Submit"
+    },
+    "registerPage": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "termsAndConditions": "I have read the Terms and Conditions",
+      "submit": "Submit"
     }
   }
 }

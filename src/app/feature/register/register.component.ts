@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +23,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     PasswordModule,
     ButtonModule,
     InputSwitchModule,
+    TranslateModule,
   ],
 })
 export class RegisterComponent implements OnInit {
