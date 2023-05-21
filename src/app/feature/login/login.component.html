@@ -1,1 +1,53 @@
-<p>login works!</p>
+<div class="w-screen h-screen">
+  <div class="w-full h-full flex justify-content-center align-items-center">
+    <div class="card fluid grid border-primary border-1 p-3 border-round-sm">
+      <form
+        class="flex-column lg:flex-row"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="form"
+      >
+        <div
+          class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
+        >
+          <label for="login" class="col-12 sm:col-3"> login </label>
+          <input
+            class="col-12 sm:col-9"
+            pInputText
+            type="text"
+            id="login"
+            formControlName="login"
+          />
+        </div>
+
+        <div
+          class="col-12 flex justify-content-between flex-column sm:flex-row p-0 mt-3"
+        >
+          <label for="password" class="col-12 sm:col-3"> password </label>
+          <p-password
+            class="col-12 sm:col-9 p-0"
+            inputStyleClass="pr-6"
+            inputId="password"
+            formControlName="password"
+            [feedback]="true"
+            [showClear]="true"
+            [toggleMask]="true"
+          ></p-password>
+        </div>
+
+        <div
+          class="col-12 flex justify-content-end flex-column sm:flex-row p-0 mt-3"
+        >
+          <button
+            type="submit"
+            pButton
+            pRipple
+            class="w-auto mt-2 md:mt-0"
+            [label]="'Submit'"
+            [icon]="isSaving ? 'pi pi-spinner pi-spin' : 'pi pi-save'"
+            [disabled]="form.invalid || isSaving"
+          ></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
