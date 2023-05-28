@@ -15,7 +15,7 @@ eslint:
     - node_modules/eslint/bin/eslint.js .
 
 deploy_production:
-  stage: deploy
+  stage: deploy_production
   environment: Production
   only:
     - master
