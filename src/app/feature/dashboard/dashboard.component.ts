@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  onTestError() {
+  onTestError(): void {
     this.notificationService.errorNotification(
       'error notification',
       'ERROR!!!',
