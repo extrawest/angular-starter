@@ -1,4 +1,4 @@
-# Extrawest React App Starter
+# Extrawest Angular App Starter
 
 ![Maintaner](https://img.shields.io/badge/maintainer-extrawest.com-blue)
 ![GitHub license](https://img.shields.io/github/license/extrawest/react-app-starter)
