@@ -5,8 +5,12 @@ cache:
     - node_modules/
 
 stages:
+  - test
   - lint
   - deploy_production
+
+include:
+  - template: Code-Quality.gitlab-ci.yml
 
 eslint:
   stage: lint
