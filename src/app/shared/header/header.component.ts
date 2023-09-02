@@ -112,10 +112,7 @@ export class HeaderComponent implements OnInit {
     this.display = true;
   }
 
-  changeLanguage($event: {
-    originalEvent: PointerEvent;
-    value: Language;
-  }): void {
+  changeLanguage($event: { originalEvent: Event; value: Language }): void {
     this.translate.use($event.value.code);
     localStorage.setItem('currentLanguage', $event.value.code);
   }
