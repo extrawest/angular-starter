@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import * as readline from 'readline';
 
-const REQUIRED_NODEJS_VERSION = 'v18.12.1';
+const REQUIRED_NODEJS_VERSION = 'v18.17.1';
 const GIT_REGEX = new RegExp(
   /((http|git|ssh|http(s)|file|\/?)|(git@[\w\.]+))(:(\/\/)?)([\w\.@\:/\-~]+)(\.git)(\/)?/,
 );
