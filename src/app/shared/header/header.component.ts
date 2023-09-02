@@ -49,14 +49,22 @@ export class HeaderComponent implements OnInit {
       name: 'EN',
     },
   ];
-  currentLanguage: Language = {
-    code: 'uk',
-    name: 'UK',
-  };
+  currentLanguage: Language | null = null;
 
   constructor(private router: Router, private translate: TranslateService) {}
 
   ngOnInit(): void {
+    // ! calculate current language from local storage
+    const currentLanguage: string | null =
+      localStorage.getItem('currentLanguage');
+
+    if (currentLanguage) {
+      this.currentLanguage =
+        this.languages.find(
+          (language: Language) => language.code === currentLanguage,
+        ) ?? this.languages[0];
+    }
+
     this.items = [
       {
         label: this.translate.instant('test.settings.personalSettings'),
