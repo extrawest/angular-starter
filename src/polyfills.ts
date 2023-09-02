@@ -51,10 +51,9 @@ import 'zone.js'; // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 
-// This is simple structuredClone polyfill for old browsers
-// we have lodash library in node_modules, so we can use it
-import { cloneDeep } from 'lodash';
-
+// This is simple structuredClone polyfill for old browsers.
+// It will work with common objects and arrays so be careful!
 if (!(window as any).structuredClone.toString()) {
-  (window as any).structuredClone = <T>(object: T): T => cloneDeep(object);
+  (window as any).structuredClone = <T>(object: T): T =>
+    JSON.parse(JSON.stringify(object));
 }
