@@ -18,7 +18,7 @@ code_quality:
     - if: $CODE_QUALITY_DISABLED
       when: never
     - if: $CI_PIPELINE_SOURCE == "merge_request_event" # Run code quality job in merge request pipelines
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH      # Run code quality job in pipelines on the default branch (but not in other branch pipelines)
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH # Run code quality job in pipelines on the default branch (but not in other branch pipelines)
     - if: $CI_COMMIT_TAG
   artifacts:
     paths: [gl-code-quality-report.json]
@@ -46,3 +46,9 @@ deploy_production:
     - npm install
     - npm run build
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+
+      # https://gitlab.com/jheimbuck_gl/jh_java_example_project
+      # https://docs.gitlab.com/ee/ci/testing/code_quality.html
+      # https://gitlab.com/gitlab-org/gitlab/-/blob/master/.gitlab-ci.yml
+      # https://gitlab.com/gitlab-org/gitlab/-/blob/master/.codeclimate.yml
+      # https://stackoverflow.com/questions/52174028/gitlab-code-quality-where-is-the-report
