@@ -101,7 +101,23 @@ Angular_app
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can:
+
+### Start new project with this boilerplate
+
+Run `npm run first-config` to execute firstConfig.js file.
+
+This script will:
+
+-   check your Node.js version (v18.17.1 required);
+-   ask you to enter remote link to your repository;
+-   remove all unnecessary files and folders;
+-   install all necessary dependencies;
+-   configure husky pre-commit hook;
+-   remove .git directory;
+-   create new .git directory and create first initial commit;
+-   set new origin to your repository;
+-   your boilerplate is ready to use!
 
 ### Development server
 
@@ -121,21 +137,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a
 package that implements end-to-end testing capabilities.
 
-### Start new project with this boilerplate
 
-Run `npm run first-config` to execute firstConfig.js file.
-
-This script will:
-
--   check your Node.js version (v18.17.1 required);
--   ask you to enter remote link to your repository;
--   remove all unnecessary files and folders;
--   install all necessary dependencies;
--   configure husky pre-commit hook;
--   remove .git directory;
--   create new .git directory and create first initial commit;
--   set new origin to your repository;
--   your boilerplate is ready to use!
 
 ## Created by Extrawest Angular Team
 
