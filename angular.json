@@ -22,7 +22,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@ngx-env/builder:browser",
           "options": {
             "outputPath": "dist",
             "index": "src/index.html",
