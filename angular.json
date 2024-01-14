@@ -77,10 +77,10 @@
           "builder": "@ngx-env/builder:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-app-starter:build:production"
+              "buildTarget": "angular-app-starter:build:production"
             },
             "development": {
-              "browserTarget": "angular-app-starter:build:development"
+              "buildTarget": "angular-app-starter:build:development"
             }
           },
           "defaultConfiguration": "development"
