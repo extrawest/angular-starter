@@ -35,10 +35,10 @@
         <ng-template pTemplate="selectedItem" let-selectedItem>
           <img
             class="flag mr-2 hidden md:inline w-1rem"
-            [src]="'assets/icons/' + selectedItem.code + '.svg'"
+            [src]="'assets/icons/' + selectedItem?.code + '.svg'"
             alt="flag"
           />
-          {{ selectedItem.name | uppercase }}
+          {{ selectedItem?.name | uppercase }}
         </ng-template>
         <ng-template pTemplate="item" let-item>
           <img
